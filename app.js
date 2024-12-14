@@ -33,7 +33,8 @@ app.get("/listing", async (req, res) => {
 });
 app.get("/listing/:id", async (req, res) => {
   let { id } = req.params;
-  res.render("listeduser", { id });
+  const user = await Listing.findById(id);
+  res.render("listeduser", { user });
 });
 
 app.listen(port, () => {
