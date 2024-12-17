@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h2><%= user.title %></h2>
-    <h2><%= user.description %></h2>
-    <p><%= user.price%></p>
-    <a href="/listing/<%=user._id%>/edit">EDIT</a>
-    <br />
-    <br />
-    <a href="/listing/<%=user._id%>/delete">Delete this</a>
-  </body>
-</html>
+<% layout('/layouts/boilerplates') %>
+<body>
+  <h2><%= user.title %></h2>
+  <h2><%= user.description %></h2>
+  <p><%= user.price%></p>
+  <a href="/listing/<%=user._id%>/edit">EDIT</a>
+  <br />
+  <br />
+  <a href="/listing/<%=user._id%>/delete">Delete this</a>
+</body>

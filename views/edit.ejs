@@ -1,41 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EDIT</title>
-  </head>
-  <body>
-    <h3>edit this</h3>
-    <form action="/listing/<%=user._id%>?_method=PUT" method="post">
-      <input
-        type="text"
-        name="listing[title]"
-        id=""
-        value="<%= user.title %>"
-      />
-      <br />
-      <br />
-      <textarea id="" name="listing[description]">
+<% layout('/layouts/boilerplates') %>
+<body>
+  <h3>edit this</h3>
+  <form action="/listing/<%=user._id%>?_method=PUT" method="post">
+    <input type="text" name="listing[title]" id="" value="<%= user.title %>" />
+    <br />
+    <br />
+    <textarea id="" name="listing[description]">
 <%= user.description %></textarea
-      >
-      <br />
-      <br />
-      <input type="text" value="<%= user.image %>" name="listing[Image]" />
-      <br />
-      <br />
-      <input type="number" value="<%= user.price %>" name="listing[price]" />
-      <br />
-      <br />
-      <input type="text" value="<%= user.country %>" name="listing[country]" />
-      <br />
-      <br />
-      <input
-        type="text"
-        value="<%= user.location %>"
-        name="listing[location]"
-      />
-      <button type="submit">ADD</button>
-    </form>
-  </body>
-</html>
+    >
+    <br />
+    <br />
+    <input type="text" value="<%= user.image %>" name="listing[Image]" />
+    <br />
+    <br />
+    <input type="number" value="<%= user.price %>" name="listing[price]" />
+    <br />
+    <br />
+    <input type="text" value="<%= user.country %>" name="listing[country]" />
+    <br />
+    <br />
+    <input type="text" value="<%= user.location %>" name="listing[location]" />
+    <button type="submit">ADD</button>
+  </form>
+</body>

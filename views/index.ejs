@@ -1,27 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WonderLust</title>
-  </head>
+<% layout('/layouts/boilerplates') %>
   <body>
     <h1>OUR Listings</h1>
     <form action="listing/newPost" method="get">
-  <button type="submit">Create a Post</button>
-</form>
+      <button type="submit">Create a Post</button>
+    </form>
 
     <div>
       <% for (var i = 0; i < allListing.length; i++) { %>
-       <h2>
-       <a href="listing/<%=allListing[i]._id%>"><%=allListing[i].title%></a>
-       </h2>
-      </h2>
-      <p><%= allListing[i].description %></p>
-      <p><%= allListing[i].price %>
-      </p><%= allListing[i].location %></p>
-      </p><%= allListing[i].country %></p>
+        <h2>
+          <a href="listing/<%= allListing[i]._id %>">
+            <%= allListing[i].title %>
+          </a>
+        </h2>
+        <p><%= allListing[i].description %></p>
+        <p>Price: <%= allListing[i].price %></p>
+        <p>Location: <%= allListing[i].location %></p>
+        <p>Country: <%= allListing[i].country %></p>
       <% } %>
     </div>
   </body>
-</html>
