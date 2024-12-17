@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const Listing = require("./models/ListingFile");
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "./views"));
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/WonderLust";
 exports.MONGO_URL = MONGO_URL;
@@ -26,7 +26,7 @@ async function main() {
   await mongoose.connect(MONGO_URL);
 }
 
-app.get("/listing", async (req, res) => {
+app.get("/Listing", async (req, res) => {
   const allListing = await Listing.find({});
 
   res.render("index.ejs", { allListing });
@@ -35,6 +35,10 @@ app.get("/listing/:id", async (req, res) => {
   let { id } = req.params;
   const user = await Listing.findById(id);
   res.render("listeduser", { user });
+});
+app.get("/newPost", (req, res) => {
+  console.log(req.query); // Log query parameters if present
+  res.render("newPost.ejs");
 });
 
 app.listen(port, () => {
