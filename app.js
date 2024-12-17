@@ -4,9 +4,10 @@ exports.app = app;
 const path = require("path");
 const mongoose = require("mongoose");
 const Listing = require("./models/ListingFile");
+const methodOverride = require("method-override");
 
 app.use(express.urlencoded({ extended: true }));
-
+app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views"));
 
@@ -48,6 +49,25 @@ app.get("/listing/:id", async (req, res) => {
   let { id } = req.params;
   const user = await Listing.findById(id);
   res.render("listeduser", { user });
+});
+
+app.get("/listing/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  const user = await Listing.findById(id);
+  res.render("edit", { user });
+});
+
+app.get("/listing/:id/delete", async (req, res) => {
+  let { id } = req.params;
+  const user = await Listing.findById(id);
+  res.render("edit", { user });
+});
+//put req
+
+app.put("/listing/:id", async (req, res) => {
+  let { id } = req.params;
+  await Listing.findByIdAndUpdate(id, { ...req.body.listing });
+  res.redirect("/listing");
 });
 
 app.listen(port, () => {

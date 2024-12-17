@@ -6,39 +6,33 @@
     <title>EDIT</title>
   </head>
   <body>
-    <h3>Create a new listing</h3>
-    <form action="/listing" method="post">
+    <h3>edit this</h3>
+    <form action="/listing/<%=user._id%>?_method=PUT" method="post">
       <input
         type="text"
         name="listing[title]"
         id=""
-        placeholder="enter title"
+        value="<%= user.title %>"
       />
       <br />
       <br />
-      <textarea
-        placeholder="enter description"
-        id=""
-        name="listing[description]"
-      ></textarea>
+      <textarea id="" name="listing[description]">
+<%= user.description %></textarea
+      >
+      <br />
+      <br />
+      <input type="text" value="<%= user.image %>" name="listing[Image]" />
+      <br />
+      <br />
+      <input type="number" value="<%= user.price %>" name="listing[price]" />
+      <br />
+      <br />
+      <input type="text" value="<%= user.country %>" name="listing[country]" />
       <br />
       <br />
       <input
         type="text"
-        placeholder="enter image URl/link"
-        name="listing[Image]"
-      />
-      <br />
-      <br />
-      <input type="number" placeholder="enter price" name="listing[price]" />
-      <br />
-      <br />
-      <input type="text" placeholder="enter country" name="listing[country]" />
-      <br />
-      <br />
-      <input
-        type="text"
-        placeholder="enter location"
+        value="<%= user.location %>"
         name="listing[location]"
       />
       <button type="submit">ADD</button>
