@@ -5,6 +5,8 @@ const path = require("path");
 const mongoose = require("mongoose");
 const Listing = require("./models/ListingFile");
 
+app.use(express.urlencoded({ extended: true }));
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views"));
 
@@ -31,14 +33,21 @@ app.get("/Listing", async (req, res) => {
 
   res.render("index.ejs", { allListing });
 });
+app.get("/listing/newPost", (req, res) => {
+  console.log(req.query); // Log query parameters if present
+  res.render("newPost.ejs");
+});
+
+app.post("/listing", async (req, res) => {
+  let listingData = req.body.listing; // Access the entire listing object
+  const newlisting = new Listing(listingData);
+  await newlisting.save();
+  res.redirect("/Listing");
+});
 app.get("/listing/:id", async (req, res) => {
   let { id } = req.params;
   const user = await Listing.findById(id);
   res.render("listeduser", { user });
-});
-app.get("/newPost", (req, res) => {
-  console.log(req.query); // Log query parameters if present
-  res.render("newPost.ejs");
 });
 
 app.listen(port, () => {
