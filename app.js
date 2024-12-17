@@ -12,6 +12,7 @@ app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 app.engine("ejs", engine);
 app.set("views", path.join(__dirname, "./views"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/WonderLust";
 exports.MONGO_URL = MONGO_URL;
