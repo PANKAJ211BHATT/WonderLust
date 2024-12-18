@@ -1,9 +1,6 @@
 <% layout('/layouts/boilerplates') %>
   <body>
     <h1>OUR Listings</h1>
-    <form action="listing/newPost" method="get">
-      <button type="submit">Create a Post</button>
-    </form>
 
     <div>
       <% for (var i = 0; i < allListing.length; i++) { %>
