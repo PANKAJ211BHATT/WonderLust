@@ -1,20 +1,21 @@
 <% layout('/layouts/boilerplates') %>
 <body>
-  <h1>OUR Listings</h1>
-  <% for (let listing of allListing) { %>
-  <div class="card" style="width: 18rem">
-    <img
-      src="<%= listing.image.url%>"
-      class="card-img-top"
-      alt="<%= listing.image.filename%>"
-    />
-    <div class="card-body">
-      <h5 class="card-title">
-        <a href="listing/<%= listing._id %>"> <%= listing.title %> </a>
-      </h5>
-      <p class="card-text"><%= listing.description %></p>
-      <p><strong><%= listing.price %> INR</strong></p>
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% for (let listing of allListing) { %>
+    <div class="card col" style="width: 18rem">
+      <img
+        src="<%= listing.image.url%>"
+        class="card-img-top"
+        alt="<%= listing.image.filename%>"
+      />
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="listing/<%= listing._id %>"> <%= listing.title %> </a>
+        </h5>
+
+        <p><strong><%= listing.price %> INR </strong>/night</p>
+      </div>
     </div>
+    <% } %>
   </div>
-  <% } %>
 </body>

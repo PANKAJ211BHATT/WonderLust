@@ -4,6 +4,7 @@
 } */
 .navbar {
   background-color: white;
+  margin: 0 0 1rem 0;
 }
 
 .fa-solid {
@@ -19,4 +20,22 @@
 .footer-bottom {
   /* background-color: #1111; */
   justify-self: center;
+}
+.card-title a {
+  text-decoration: none;
+}
+.card {
+}
+
+.card-img-top {
+  border-radius: 0.5rem !important;
+  width: 100%;
+  margin: 0.5rem 0;
+  object-fit: cover !important;
+}
+.row {
+  justify-content: space-around !important;
+}
+.col {
+  margin: 1rem 0 !important;
 }
