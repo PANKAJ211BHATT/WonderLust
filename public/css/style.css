@@ -1,4 +1,15 @@
-body {
+/* body {
   background-color: yellow;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+} */
+.navbar {
+  background-color: white;
+}
+
+.fa-solid {
+  color: brown;
+  font-size: 2rem;
+}
+.nav-link {
+  color: black !important;
 }
