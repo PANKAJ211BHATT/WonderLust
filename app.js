@@ -63,7 +63,7 @@ app.get("/listing/:id/edit", async (req, res) => {
 app.get("/listing/:id/delete", async (req, res) => {
   let { id } = req.params;
   const user = await Listing.findByIdAndDelete(id);
-  res.redirect("/Listing");
+  res.redirect("/listing");
 });
 //put req
 
