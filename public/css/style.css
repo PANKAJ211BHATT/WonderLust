@@ -25,6 +25,10 @@
   text-decoration: none;
 }
 .card {
+  border: none !important;
+}
+.card-body {
+  padding: 0 !important;
 }
 
 .card-img-top {
