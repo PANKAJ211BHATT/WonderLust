@@ -1,12 +1,12 @@
-/* body {
-  background-color: yellow;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-} */
 .navbar {
-  background-color: white;
+  background-color: white !important;
   margin: 0 0 1rem 0;
+  display: flex !important;
+  width: 100% !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
 }
-
 .fa-solid {
   color: brown;
   font-size: 2rem;
@@ -21,25 +21,26 @@
   /* background-color: #1111; */
   justify-self: center;
 }
-.card-title a {
-  text-decoration: none;
-}
 .card {
   border: none !important;
-}
-.card-body {
-  padding: 0 !important;
+  width: 18rem !important;
+  margin: 0;
+  transition: transform 0.2s ease;
 }
 
-.card-img-top {
-  border-radius: 0.5rem !important;
-  width: 100%;
-  margin: 0.5rem 0;
-  object-fit: cover !important;
+.card:hover {
+  transform: translateY(-5px);
 }
-.row {
-  justify-content: space-around !important;
-}
+
 .col {
+  display: flex;
+  justify-content: center;
   margin: 1rem 0 !important;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start !important;
+  margin: 0 -1rem;
 }
