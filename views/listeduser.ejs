@@ -1,12 +1,30 @@
 <% layout('/layouts/boilerplates') %>
 <body>
-  <h2><%= user.title %></h2>
-  <h4><%= user.description %></h4>
-  <p><%= user.price%></p>
-  <a href="/listing/<%=user._id%>/edit"
-    ><i class="fa-solid fa-pen-to-square"></i
-  ></a>
-  <br />
-  <br />
-  <a href="/listing/<%=user._id%>/delete"><i class="fa-solid fa-trash"></i></a>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mb-3 col-6 offset-2">
+        <img
+          src="<%= user.image.url %>"
+          class="card-img-top"
+          id="imageshow"
+          alt="<%= user.image.filename %>"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= user.title %></h5>
+        </div>
+      </div>
+      <div>
+        <p class="card-text"><%= user.description %></p>
+        <p class="card-text"><strong><%= user.price %> INR </strong>/night</p>
+        <div class="buttons">
+          <button>
+            <a href="/listing/<%=user._id%>/edit">EDIT</a>
+          </button>
+          <button>
+            <a href="/listing/<%=user._id%>/delete">DELETE</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>

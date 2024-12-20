@@ -1,3 +1,25 @@
+button {
+  display: inline-block;
+  outline: none;
+  border-width: 0px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: 500;
+  max-width: 100%;
+  text-align: center;
+  text-decoration: none;
+  background: rgb(240, 18, 18);
+  cursor: pointer;
+  height: 24px;
+  line-height: 24px;
+  padding: 0px 12px;
+  vertical-align: middle;
+  width: auto;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+}
+
 .navbar {
   background-color: white !important;
   margin: 0 0 1rem 0;
@@ -8,9 +30,10 @@
   z-index: 1000 !important;
 }
 .fa-solid {
-  color: brown;
+  color: rgb(240, 18, 18);
   font-size: 2rem;
 }
+
 .nav-link {
   color: black !important;
 }
@@ -21,26 +44,21 @@
   /* background-color: #1111; */
   justify-self: center;
 }
-.card {
+/* .card {
   border: none !important;
   width: 18rem !important;
   margin: 0;
   transition: transform 0.2s ease;
-}
-
+} */
+/* #cards {
+  width: 50rem !important;
+  height: 20rem !important;
+} */
+/* 
 .card:hover {
   transform: translateY(-5px);
-}
-
-.col {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0 !important;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start !important;
-  margin: 0 -1rem;
+} */
+#imageshow {
+  height: 40vh !important;
+  object-fit: cover;
 }
